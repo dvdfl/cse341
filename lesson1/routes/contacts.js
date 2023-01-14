@@ -7,6 +7,6 @@ const controller = require("../controllers/contacts")
 
 //resolving route with controller method 
 router.get('/', controller.getAll)
-router.get('/:userId', controller.getById)
+router.get('/:contactId', controller.getById)
 
 module.exports = router

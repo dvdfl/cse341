@@ -1,4 +1,5 @@
 const connection = require("../data/connection");
+const ObjectId = require("mongodb").ObjectId;
 
 let client, collection;
 
@@ -21,7 +22,8 @@ const getById = async function(req, res, next){
 
     //console.log("querying by Id");
     //console.log(req.params);
-    const doc = await collection.findOne();
+    const query = { _id : ObjectId(req.params.contactId) };
+    const doc = await collection.findOne(query);
     //console.log(`${allDocs.length} documents returned.`);
 
     res.json(doc);
