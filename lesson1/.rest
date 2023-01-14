@@ -1,0 +1,40 @@
+// LOCALHOST
+###
+GET http://localhost:8080/contacts 
+# returns a json object with all contacts data.
+###
+GET http://localhost:8080/contacts/63c209b70afdc73c2cc8971c
+# returns a json object with 1st contact data
+###
+GET http://localhost:8080/contacts/63c209b70afdc73c2cc8971d
+# returns a json object with 2nd contact data
+###
+GET http://localhost:8080/contacts/63c209b70afdc73c2cc8971e
+# returns a json object with 3rd contact data
+###
+GET http://localhost:8080/contacts/63c209b70afdc73c2cc8971f
+# returns a json object with 4th contact data
+###
+GET http://localhost:8080/contacts/63c209b70afdc73c2cc89720
+# returns a json object with 5th contact data
+
+
+// PRODUCTION Deploy
+###
+GET https://lesson1-slmz.onrender.com/contacts
+# returns a json object with all contacts data.
+###
+GET https://lesson1-slmz.onrender.com//63c209b70afdc73c2cc8971c
+# returns a json object with 1st contact data
+###
+GET https://lesson1-slmz.onrender.com//63c209b70afdc73c2cc8971d
+# returns a json object with 2nd contact data
+###
+GET https://lesson1-slmz.onrender.com//63c209b70afdc73c2cc8971e
+# returns a json object with 3rd contact data
+###
+GET https://lesson1-slmz.onrender.com//63c209b70afdc73c2cc8971f
+# returns a json object with 4th contact data
+###
+GET https://lesson1-slmz.onrender.com//63c209b70afdc73c2cc89720
+# returns a json object with 5th contact data
