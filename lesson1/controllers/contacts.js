@@ -33,7 +33,7 @@ const createContact = async function(req, res, next) {
     await openDatabase();
 
     //console.log("querying by Id");
-    console.log(req.body);
+    //console.log(req.body);
     const newContact = req.body;
     const result = await collection.insertOne(newContact);
     //console.log(result)
@@ -41,7 +41,7 @@ const createContact = async function(req, res, next) {
 
     // returning status and result
     res.status(201);
-    res.json({ _id: result.insertedId });
+    res.json({ id: result.insertedId });
 }
 
 const updateContact = async function(req, res, next) {
