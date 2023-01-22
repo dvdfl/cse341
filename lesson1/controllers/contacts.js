@@ -62,6 +62,7 @@ const updateContact = async function(req, res, next) {
     //console.log(result)
     //console.log(`${result.matchedCount} documents returned.`);
     res.status(204);
+    res.json({ updatedCount: result.matchedCount})
 }
 
 const deleteById = async function(req, res, next) {
