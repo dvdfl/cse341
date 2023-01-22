@@ -1,40 +1,63 @@
 // LOCALHOST
-###
+### Get all Contacts
 GET http://localhost:8080/contacts 
-# returns a json object with all contacts data.
-###
+
+### Get Contact by id
 GET http://localhost:8080/contacts/63c209b70afdc73c2cc8971c
-# returns a json object with 1st contact data
-###
-GET http://localhost:8080/contacts/63c209b70afdc73c2cc8971d
-# returns a json object with 2nd contact data
-###
-GET http://localhost:8080/contacts/63c209b70afdc73c2cc8971e
-# returns a json object with 3rd contact data
-###
-GET http://localhost:8080/contacts/63c209b70afdc73c2cc8971f
-# returns a json object with 4th contact data
-###
-GET http://localhost:8080/contacts/63c209b70afdc73c2cc89720
-# returns a json object with 5th contact data
+
+### Create contact
+POST http://localhost:8080/contacts/ HTTP/1.1
+content-type: application/json
+{
+    "firstName":"Aaron",
+    "lastName":"Watts",
+    "email":"aWeaver32108@yahoo.com",
+    "favoriteColor":"Brown",
+    "birthday":"06/19/2000"
+}
+
+### Update contact
+PUT http://localhost:8080/contacts/63c209b70afdc73c2cc8971e HTTP/1.1
+content-type: application/json
+{
+    "firstName":"Alejandro",
+    "lastName":"Lopez",
+    "email":"lopeza365@yahoo.com",
+    "favoriteColor":"white",
+    "birthday":"1986-01-12T12:00:00.000Z"
+}
+
+### DELETE contact
+DELETE http://localhost:8080/contacts/63cc8dcb6c121689c6bae978 HTTP/1.1
 
 
-// PRODUCTION Deploy
-###
+
+// PRODUCTION
+### GET all Contacts
 GET https://lesson1-slmz.onrender.com/contacts
 # returns a json object with all contacts data.
-###
-GET https://lesson1-slmz.onrender.com//63c209b70afdc73c2cc8971c
-# returns a json object with 1st contact data
-###
-GET https://lesson1-slmz.onrender.com//63c209b70afdc73c2cc8971d
-# returns a json object with 2nd contact data
-###
-GET https://lesson1-slmz.onrender.com//63c209b70afdc73c2cc8971e
-# returns a json object with 3rd contact data
-###
-GET https://lesson1-slmz.onrender.com//63c209b70afdc73c2cc8971f
-# returns a json object with 4th contact data
-###
-GET https://lesson1-slmz.onrender.com//63c209b70afdc73c2cc89720
-# returns a json object with 5th contact data
+
+### Create a contact
+POST https://lesson1-slmz.onrender.com/contacts/ HTTP/1.1
+content-type: application/json
+{
+    "firstName":"Alex",
+    "lastName":"Wayne",
+    "email":"waynever@hotmail.com",
+    "favoriteColor":"Brown",
+    "birthday":"06/19/2000"
+}
+
+### Update contact
+PUT https://lesson1-slmz.onrender.com/contacts/63c209b70afdc73c2cc8971d HTTP/1.1
+content-type: application/json
+{
+    "firstName":"Rosa",
+    "lastName":"Olvera",
+    "email":"arqrolver@gmail.com",
+    "favoriteColor":"green",
+    "birthday":"1971-05-24T12:00:00.000Z"
+}
+
+### DELETE contact
+DELETE https://lesson1-slmz.onrender.com/contacts/63cc8dcb6c121689c6bae978 HTTP/1.1
