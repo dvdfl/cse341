@@ -5,10 +5,10 @@
     "description": "CSE341 - Contats API project",
     "version": "1.0.0"
   },
-  "host": "https://lesson1-slmz.onrender.com/",
+  "host": "contacts-api-uomr.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
@@ -22,7 +22,7 @@
         }
       }
     },
-    "/api-docs": {
+    "/api-docs/": {
       "get": {
         "description": "APU documentation",
         "parameters": [],

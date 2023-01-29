@@ -34,11 +34,11 @@ DELETE http://localhost:8080/contacts/63cc8dcb6c121689c6bae978 HTTP/1.1
 
 // PRODUCTION
 ### GET all Contacts
-GET https://lesson1-slmz.onrender.com/contacts
+GET https://contacts-api-uomr.onrender.com/contacts
 # returns a json object with all contacts data.
 
 ### Create a contact
-POST https://lesson1-slmz.onrender.com/contacts/ HTTP/1.1
+POST https://contacts-api-uomr.onrender.com/contacts/ HTTP/1.1
 content-type: application/json
 {
     "firstName":"Alex",
@@ -49,7 +49,7 @@ content-type: application/json
 }
 
 ### Update contact
-PUT https://lesson1-slmz.onrender.com/contacts/63c209b70afdc73c2cc8971d HTTP/1.1
+PUT https://contacts-api-uomr.onrender.com/contacts/63c209b70afdc73c2cc8971d HTTP/1.1
 content-type: application/json
 {
     "firstName":"Rosa",
@@ -60,4 +60,4 @@ content-type: application/json
 }
 
 ### DELETE contact
-DELETE https://lesson1-slmz.onrender.com/contacts/63cc8dcb6c121689c6bae978 HTTP/1.1
+DELETE https://contacts-api-uomr.onrender.com/contacts/63cc8dcb6c121689c6bae978 HTTP/1.1
