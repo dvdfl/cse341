@@ -7,5 +7,6 @@ const indexCtrl = require("../controllers/index")
 
 //resolving route with controller method 
 router.get('/', indexCtrl.showName)
+router.use("/contacts", require("./contacts"))
 
 module.exports = router
