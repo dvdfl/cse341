@@ -21,8 +21,6 @@ getById = async function(req, res, next) {
 }
 
 createRecipe = async function(req, res, next) {
-    await openDatabase();
-
     //console.log("querying by Id");
     //console.log(req.body);
     const newRecipe = req.body;
