@@ -15,7 +15,7 @@ getAll = async function(req, res, next) {
 }
 
 getById = async function(req, res, next) { 
-    const query = { _id : new ObjectId(req.params.recipeId) };
+    const query = { _id : ObjectId(req.params.recipeId) };
     const doc = await _collection.findOne(query);
     res.json(doc)
 }
