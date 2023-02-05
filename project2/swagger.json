@@ -5,10 +5,10 @@
     "description": "CSE341 - API project",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "cookbook-api-z2ch.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/recipe/": {
