@@ -23,3 +23,20 @@ install MongoDB (client)
 
 Install dotenv, `.env` files reader
 `npm install dotenv`
+
+### week 3
+Debug
+`node --inspect server.js`
+
+
+swager generator package
+`npm install swagger-autogen`
+
+
+swager documentation for express package
+`npm install swagger-ui-express`
+
+generate JSON file
+node swagger.js
+
+
