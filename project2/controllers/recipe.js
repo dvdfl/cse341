@@ -33,4 +33,15 @@ createRecipe = async function(req, res, next) {
     res.json({ id: result.insertedId });
 }
 
-module.exports = { getAll, getById, createRecipe }
+const deleteById = async function(req, res, next) {
+    await openDatabase();
+
+    //console.log("deleting by Id");
+    const query = { _id : ObjectId(req.params.recipeId) };
+    const result = await collection.deleteOne(query);
+    //console.log(`${result.deletedCount} documents deleted.`);
+
+    res.status(200);
+    res.json({ deletedCount : result.deletedCount });
+}
+module.exports = { getAll, getById, createRecipe, deleteById }
