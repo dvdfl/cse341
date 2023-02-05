@@ -13,7 +13,7 @@
   "paths": {
     "/recipe/": {
       "get": {
-        "description": "",
+        "description": "Returns all recipies",
         "parameters": [],
         "responses": {
           "200": {
@@ -22,8 +22,36 @@
         }
       },
       "post": {
-        "description": "",
-        "parameters": [],
+        "description": "Creates a new Recipe document",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "prep_time": {
+                  "example": "numeric"
+                },
+                "total_time": {
+                  "example": "numeric"
+                },
+                "servings": {
+                  "example": "numeric"
+                },
+                "meal_type": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -37,6 +65,26 @@
     "/recipe/{recipeId}": {
       "get": {
         "description": "",
+        "parameters": [
+          {
+            "name": "recipeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "description": "Updates Recipe document by id",
+        "parameters": []
+      },
+      "delete": {
+        "description": "Deletes Recipe document by id",
         "parameters": [
           {
             "name": "recipeId",
