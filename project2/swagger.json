@@ -37,16 +37,31 @@
                   "example": "any"
                 },
                 "prep_time": {
-                  "example": "numeric"
+                  "example": 30
                 },
                 "total_time": {
-                  "example": "numeric"
+                  "example": 45
                 },
                 "servings": {
-                  "example": "numeric"
+                  "example": 2
                 },
                 "meal_type": {
                   "example": "any"
+                },
+                "origin_country" :{ "example" : "any"},
+                "image_url" :{ "example" : "any"},
+                "shared_by" :{ "example" : "any"},
+                "ingredients" :{ 
+                  "example":[
+                    { "qty" : 1, "name" : "ingredient 1" },
+                    { "qty" : 2, "name" : "ingredient 2" }
+                  ]
+                },
+                "prep_steps" :{ 
+                  "example":[
+                    { "step" : 1, "description" : "preparation step 1" },
+                    { "step" : 2, "description" : "preparation step 2" }
+                  ]
                 }
               }
             }
@@ -55,6 +70,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Invalid request"
           },
           "201": {
             "description": "Created"
@@ -81,7 +99,67 @@
       },
       "put": {
         "description": "Updates Recipe document by id",
-        "parameters": []
+        "parameters": [
+          {
+            "name": "recipeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "prep_time": {
+                  "example": 30
+                },
+                "total_time": {
+                  "example": 45
+                },
+                "servings": {
+                  "example": 2
+                },
+                "meal_type": {
+                  "example": "any"
+                },
+                "origin_country" :{ "example" : "any"},
+                "image_url" :{ "example" : "any"},
+                "shared_by" :{ "example" : "any"},
+                "ingredients" :{ 
+                  "example":[
+                    { "qty" : 1, "name" : "ingredient 1" },
+                    { "qty" : 2, "name" : "ingredient 2" }
+                  ]
+                },
+                "prep_steps" :{ 
+                  "example":[
+                    { "step" : 1, "description" : "preparation step 1" },
+                    { "step" : 2, "description" : "preparation step 2" }
+                  ]
+                }
+              }
+            }
+          }
+        ],
+        "responses" :{
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Invalid request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       },
       "delete": {
         "description": "Deletes Recipe document by id",

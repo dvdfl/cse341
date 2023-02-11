@@ -9,4 +9,14 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
-app.listen(port);
+// Handling Errors
+app.use((err, req, res, next) => {
+    console.log(err);
+    err.statusCode = err.statusCode || 500;
+    err.message = err.message || "Internal Server Error";
+    res.status(err.statusCode).json({
+      message: err.message,
+    });
+});
+
+app.listen(port,() => console.log(`Server is running on port ${port}`));
