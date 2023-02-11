@@ -3,7 +3,7 @@
 GET http://localhost:8080/recipe
 
 ### Get Recipe by id
-GET http://localhost:8080/recipe/63c209b70afdc73c2cc8971c
+GET http://localhost:8080/recipe/63df6586542c607015b07dd1
 
 ### Create Recipe
 POST http://localhost:8080/recipe/ HTTP/1.1
@@ -23,19 +23,50 @@ content-type: application/json
     {"qty" : 1, "name":"can of tuna"},
     {"qty" : 2, "name":"tablespoons of sourcream"}
   ],
-  "steps" :[
-    {"step" : 1, "desciption" : "mix tuna and sour cream"},
-    {"step" : 2, "desciption" : "spread the mix on 2 slices"},
-    {"step" : 3, "desciption" : "put one slice on top of each of the other slices."}
+  "prep_steps" :[
+    {"step" : 1, "description" : "mix tuna and sour cream"},
+    {"step" : 2, "description" : "spread the mix on 2 slices"},
+    {"step" : 3, "description" : "put one slice on top of each of the other slices."}
     ]
 }
+  
+### Update contact
+PUT https://localhost:8080/recipe/63df6586542c607015b07dd1 HTTP/1.1
+content-type: application/json
+{
+  "name": "Peanut butter and Jelly sandwich",
+  "desctiption": "Traditional Peanut butter and Jelly sandwich",
+  "prep_time": 5,
+  "total_time": 5,
+  "servings": 1,
+  "meal_type": "snack",
+  "origin_country": "USA",
+  "image_url": "",
+  "shared_by": "DF",
+  "ingredients": [
+      { "qty": 2, "name": "slices of bread" },
+      { "qty": 1, "name": "tablespoon of peanut butter" },
+      { "qty": 1, "name": "tablespoon of jelly" }
+  ],
+  "steps": [
+      { "step": 1, "desciption": "spread peanut butter on one silce" },
+      { "step": 2, "desciption": "spread jelly on one silce" },
+      { "step": 3, "desciption": "put one slice on top of the other the inner side should have the spread." }
+  ]
+}
+
+### DELETE contact
+DELETE https://localhost:8080/recipe/63df6586542c607015b07dd1 HTTP/1.1
+
+
+
 // PRODUCTION
 ### GET all Recipies
 GET https://cookbook-api-z2ch.onrender.com/recipe
 # returns a json object with all recipes data.
 
 ### Get Recipe by id
-GET http://localhost:8080/recipe/63c209b70afdc73c2cc8971c
+GET http://localhost:8080/recipe/63df6586542c607015b07dd1
 
 ### Create a Recipe
 POST https://cookbook-api-z2ch.onrender.com/recipe/ HTTP/1.1
@@ -55,9 +86,38 @@ content-type: application/json
       {"qty" : 1, "name":"can of tuna"},
       {"qty" : 2, "name":"tablespoons of sourcream"}
     ],
-    "steps" :[
-      {"step" : 1, "desciption" : "mix tuna and sour cream"},
-      {"step" : 2, "desciption" : "spread the mix on 2 slices"},
-      {"step" : 3, "desciption" : "put one slice on top of each of the other slices."}
+    "prep_steps" :[
+      {"step" : 1, "description" : "mix tuna and sour cream"},
+      {"step" : 2, "description" : "spread the mix on 2 slices"},
+      {"step" : 3, "description" : "put one slice on top of each of the other slices."}
       ]
   }
+
+  
+### Update contact
+PUT https://cookbook-api.onrender.com/recipe/63df6586542c607015b07dd1 HTTP/1.1
+content-type: application/json
+{
+  "name": "Tuna sandwich",
+  "desctiption":"Basic and quick recipe for tuna sandwich",
+  "prep_time": 5,
+  "total_time" : 5,
+  "servings": 1,
+  "meal_type": "light meal",
+  "origin_country": "unknown",
+  "image_url": "",
+  "shared_by" :"DF",
+  "ingredients" : [
+    {"qty" : 4, "name":"slices of bread"},
+    {"qty" : 1, "name":"can of tuna"},
+    {"qty" : 2, "name":"tablespoons of sourcream"}
+  ],
+  "prep_steps" :[
+    {"step" : 1, "description" : "mix tuna and sour cream"},
+    {"step" : 2, "description" : "spread the mix on 2 slices"},
+    {"step" : 3, "description" : "put one slice on top of each of the other slices."}
+    ]
+}
+
+### DELETE contact
+DELETE https://cookbook-api.onrender.com/recipe/63df6586542c607015b07dd1 HTTP/1.1

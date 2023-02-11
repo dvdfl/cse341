@@ -61,7 +61,7 @@ const updateRecipe = async function(req, res, next) {
             }
         }
         //console.log(updateDoc);
-        const result = await collection.updateOne(query, updateDoc);
+        const result = await _collection.updateOne(query, updateDoc);
         //console.log(result)
         //console.log(`${result.matchedCount} documents returned.`);
         res.status(204);
@@ -77,7 +77,7 @@ const deleteById = async function(req, res, next) {
     try {
         //console.log("deleting by Id");
         const query = { _id : ObjectId(req.params.recipeId) };
-        const result = await collection.deleteOne(query);
+        const result = await _collection.deleteOne(query);
         //console.log(`${result.deletedCount} documents deleted.`);
     
         res.status(200);
