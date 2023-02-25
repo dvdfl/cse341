@@ -4,7 +4,7 @@ const ObjectId = require("mongodb").ObjectId;
 //console.log("obtaining connection...");
 
 const _db = dbConn.getDb()
-const _collection = _db.db("cookbook").collection("recipes");
+const _collection = _db.db("cookbook").collection("unitsOfMeasure");
 
 const getAll = async function(req, res, next) {
     try {
@@ -21,7 +21,7 @@ const getAll = async function(req, res, next) {
 
 const getById = async function(req, res, next) { 
     try {
-        const query = { _id : ObjectId(req.params.recipeId) };
+        const query = { _id : ObjectId(req.params.unitId) };
         const doc = await _collection.findOne(query);
         res.json(doc)
     }
@@ -30,12 +30,12 @@ const getById = async function(req, res, next) {
    }
 }
 
-const createRecipe = async function(req, res, next) {
+const createUnitOfMeasure = async function(req, res, next) {
     try {
         //console.log("querying by Id");
         //console.log(req.body);
-        const newRecipe = req.body;
-        const result = await _collection.insertOne(newRecipe);
+        const newUnit = req.body;
+        const result = await _collection.insertOne(newUnit);
         //console.log(result)
         //console.log(`Document returned with _id: ${result.insertedId}`);
     
@@ -50,14 +50,14 @@ const createRecipe = async function(req, res, next) {
 }
 
 
-const updateRecipe = async function(req, res, next) {
+const updateUnitofMeasure = async function(req, res, next) {
     try {
-        const query = { _id : ObjectId(req.params.recipeId) };
-        const recipe = req.body;
+        const query = { _id : ObjectId(req.params.unitId) };
+        const unit = req.body;
         const updateDoc= { $set : {} } ;
-        for (const prop in recipe) {
-            if (Object.hasOwnProperty.call(recipe, prop)) {
-                updateDoc["$set"][prop] = recipe[prop];
+        for (const prop in unit) {
+            if (Object.hasOwnProperty.call(unit, prop)) {
+                updateDoc["$set"][prop] = unit[prop];
             }
         }
         //console.log(updateDoc);
@@ -76,7 +76,7 @@ const updateRecipe = async function(req, res, next) {
 const deleteById = async function(req, res, next) {
     try {
         //console.log("deleting by Id");
-        const query = { _id : ObjectId(req.params.recipeId) };
+        const query = { _id : ObjectId(req.params.unitId) };
         const result = await _collection.deleteOne(query);
         //console.log(`${result.deletedCount} documents deleted.`);
     
@@ -87,4 +87,4 @@ const deleteById = async function(req, res, next) {
         res.status(500).json(err);
     }
 }
-module.exports = { getAll, getById, createRecipe, deleteById, updateRecipe }
+module.exports = { getAll, getById, createUnitOfMeasure, deleteById, updateUnitofMeasure }

@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+//require index controller
 const controller = require("../controllers/recipe")
 //const { verifyToken } = require("../middleware/auth")
 const { requiresAuth } = require('express-openid-connect');
