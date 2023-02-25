@@ -5,15 +5,15 @@
     "description": "CSE341 - API project",
     "version": "1.0.0"
   },
-  "host": "cookbook-api-z2ch.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/recipe/": {
       "get": {
-        "description": "Returns all recipies",
+        "description": "Returns all recipes",
         "parameters": [],
         "responses": {
           "200": {
@@ -74,6 +74,9 @@
           "400": {
             "description": "Invalid request"
           },
+          "401": {
+            "description": "Unauthorized request"
+          },
           "201": {
             "description": "Created"
           }
@@ -98,6 +101,11 @@
         }
       },
       "put": {
+        "security":[
+          {
+            "bearerAuth" : []
+          }
+        ],
         "description": "Updates Recipe document by id",
         "parameters": [
           {
@@ -176,6 +184,15 @@
             "description": "OK"
           }
         }
+      }
+    }
+  },
+  "components": {        
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
       }
     }
   }
