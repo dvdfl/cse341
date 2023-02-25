@@ -70,8 +70,8 @@
                 "shared_by" :{ "example" : "any"},
                 "ingredients" :{ 
                   "example":[
-                    { "qty" : 1, "name" : "ingredient 1" },
-                    { "qty" : 2, "name" : "ingredient 2" }
+                    { "qty" : 1, "uom": "tbsp", "name" : "ingredient 1" },
+                    { "qty" : 2, "uom": "pc", "name" : "ingredient 2" }
                   ]
                 },
                 "prep_steps" :{ 
@@ -164,8 +164,8 @@
                 "shared_by" :{ "example" : "any"},
                 "ingredients" :{ 
                   "example":[
-                    { "qty" : 1, "name" : "ingredient 1" },
-                    { "qty" : 2, "name" : "ingredient 2" }
+                    { "qty" : 1, "uom": "tbsp", "name" : "ingredient 1" },
+                    { "qty" : 2, "uom": "pc", "name" : "ingredient 2" }
                   ]
                 },
                 "prep_steps" :{ 
