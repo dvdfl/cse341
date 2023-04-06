@@ -10,7 +10,7 @@ POST http://localhost:8080/recipe/ HTTP/1.1
 content-type: application/json
 {
   "name": "Tuna sandwich",
-  "desctiption":"Basic and quick recipe for tuna sandwich",
+  "description":"Basic and quick recipe for tuna sandwich",
   "prep_time": 5,
   "total_time" : 5,
   "servings": 1,
@@ -35,7 +35,7 @@ PUT https://localhost:8080/recipe/63df6586542c607015b07dd1 HTTP/1.1
 content-type: application/json
 {
   "name": "Peanut butter and Jelly sandwich",
-  "desctiption": "Traditional Peanut butter and Jelly sandwich",
+  "description": "Traditional Peanut butter and Jelly sandwich",
   "prep_time": 5,
   "total_time": 5,
   "servings": 1,
@@ -73,7 +73,7 @@ POST https://cookbook-api-z2ch.onrender.com/recipe/ HTTP/1.1
 content-type: application/json
 {
     "name": "Tuna sandwich",
-    "desctiption":"Basic and quick recipe for tuna sandwich",
+    "description":"Basic and quick recipe for tuna sandwich",
     "prep_time": 5,
     "total_time" : 5,
     "servings": 1,
@@ -99,7 +99,7 @@ PUT https://cookbook-api.onrender.com/recipe/63df6586542c607015b07dd1 HTTP/1.1
 content-type: application/json
 {
   "name": "Tuna sandwich",
-  "desctiption":"Basic and quick recipe for tuna sandwich",
+  "description":"Basic and quick recipe for tuna sandwich",
   "prep_time": 5,
   "total_time" : 5,
   "servings": 1,

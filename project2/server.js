@@ -8,6 +8,10 @@ require('dotenv').config();
 
 const port = process.env.PORT || 3300;
 
+//CORS
+const cors = require('cors')
+app.use(cors())
+
 // Static pages
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
